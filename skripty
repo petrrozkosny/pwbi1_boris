@@ -72,3 +72,16 @@ IF(
     "Přejít na detail okresu "&SELECTEDVALUE(wiki[Okres]),
     "Kliknutím do tabulky vyberte okres"
 )
+______________________________________________
+
+03 podminene formatovani mesto = 
+IF(
+-- maximalni pocet obyvatel v danem meste a okrese
+MAX(wiki[Počet obyvatel])
+-- maximalni pocet obyvatel v danem okrese bez ohledu na mesto
+=
+MAXX(
+    FILTER(
+        ALL(wiki),
+    wiki[Okres] = SELECTEDVALUE(wiki[Okres])),
+wiki[Počet obyvatel]),"gold")
