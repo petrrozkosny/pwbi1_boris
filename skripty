@@ -63,3 +63,12 @@ MAXX(
         data[lokalita] = "RUZYNE"),
     data[srazky])),
 data[datum])
+
+____________________________________________
+
+01 text tlacitka = 
+IF(
+    HASONEFILTER(wiki[Okres]),
+    "Přejít na detail okresu "&SELECTEDVALUE(wiki[Okres]),
+    "Kliknutím do tabulky vyberte okres"
+)
