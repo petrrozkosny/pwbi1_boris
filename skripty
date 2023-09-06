@@ -6,3 +6,16 @@ MAXX(
     data[lokalita] = SELECTEDVALUE(data[lokalita])
     && data[rok] = SELECTEDVALUE(data[rok]) - 1),
 data[maximalni_teplota])
+
+_______________________________________________
+
+13 podminene formatovani max teplota = 
+
+-- maximalni teplota v dne lokalite, v danem roce
+IF(
+MAX(data[maximalni_teplota]) = 
+MAXX(
+    FILTER(
+        ALL(data),
+    data[lokalita] = SELECTEDVALUE(data[lokalita])),
+data[maximalni_teplota]),"TOMATO")
