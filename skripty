@@ -85,3 +85,12 @@ MAXX(
         ALL(wiki),
     wiki[Okres] = SELECTEDVALUE(wiki[Okres])),
 wiki[Počet obyvatel]),"gold")
+
+___________________________________________________
+
+04 nejlidnatejsi mesto a jeho pocet obyvatel = 
+
+CONCATENATEX(
+    FILTER(wiki,
+    wiki[Počet obyvatel] = 
+MAX(wiki[Počet obyvatel])),wiki[Město],", ")&": "&MAX(wiki[Počet obyvatel])
