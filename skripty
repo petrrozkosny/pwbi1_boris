@@ -1,0 +1,8 @@
+12 maximalni teplota predchozi rok = 
+-- v dane lokalite
+MAXX(
+    FILTER(
+        ALL(data),
+    data[lokalita] = SELECTEDVALUE(data[lokalita])
+    && data[rok] = SELECTEDVALUE(data[rok]) - 1),
+data[maximalni_teplota])
