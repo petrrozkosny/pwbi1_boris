@@ -40,3 +40,26 @@ _________________________________________________
 
 cv03 minimalni datum ruzyne = 
 MINX(FILTER(data,data[lokalita] = "RUZYNE"),data[datum])
+
+______________________________________________________
+cvb01 = 
+
+if(
+    MAXX(
+        FILTER(data,
+        data[lokalita] = "RUZYNE"),
+    data[maximalni_teplota])  =
+    MAX(data[maximalni_teplota]),"ANO","NE")
+
+_________________________________________________________
+
+cvb02 = 
+MAXX(
+    FILTER(data,
+    data[lokalita] = "RUZYNE"
+    && data[srazky] =
+    MAXX(
+        FILTER(data,
+        data[lokalita] = "RUZYNE"),
+    data[srazky])),
+data[datum])
