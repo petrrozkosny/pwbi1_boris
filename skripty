@@ -23,3 +23,10 @@ ___________________________________________________
 
 
 14 nazev grafu = "Vývoj maximálních teplot v lokalitě "& SELECTEDVALUE(data[lokalita])
+______________________________________________________
+
+15 max teplota treshold = 
+
+    MINX(
+    ALL(data[rok]),
+    CALCULATE(MAX(data[maximalni_teplota])))-10
