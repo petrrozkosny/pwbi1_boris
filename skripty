@@ -94,3 +94,14 @@ CONCATENATEX(
     FILTER(wiki,
     wiki[Počet obyvatel] = 
 MAX(wiki[Počet obyvatel])),wiki[Město],", ")&": "&MAX(wiki[Počet obyvatel])
+
+_____________________________________________
+
+05 metrika dle vyberu = 
+IF(
+-- pokud je vybranou hodnotou obyvatele
+-- tak suma poctu obyvatel
+SELECTEDVALUE(metriky[metrika]) = "obyvatele",
+SUM(wiki[Počet obyvatel]),
+-- jinak, suma rozlohy
+SUM(wiki[Rozloha (km²)]))
