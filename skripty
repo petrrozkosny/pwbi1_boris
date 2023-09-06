@@ -19,3 +19,7 @@ MAXX(
         ALL(data),
     data[lokalita] = SELECTEDVALUE(data[lokalita])),
 data[maximalni_teplota]),"TOMATO")
+___________________________________________________
+
+
+14 nazev grafu = "Vývoj maximálních teplot v lokalitě "& SELECTEDVALUE(data[lokalita])
