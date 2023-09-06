@@ -30,3 +30,13 @@ ______________________________________________________
     MINX(
     ALL(data[rok]),
     CALCULATE(MAX(data[maximalni_teplota])))-10
+_______________________________________________________
+cv01 minimalni datum = 
+MIN(data[datum])
+_________________________________________
+cv02 minimalni datum vse = MINX(ALL(data),data[datum])
+_________________________________________________
+
+
+cv03 minimalni datum ruzyne = 
+MINX(FILTER(data,data[lokalita] = "RUZYNE"),data[datum])
